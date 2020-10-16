@@ -53,8 +53,8 @@ void draw() {
     }
     line(750-i, Math.round(550-y2*2), 751-i, Math.round(550-y1*2));
     textSize(16);
-    text("timebase: "+scales[scale]*8+"ms", 50, 570);
-    text("Status: "+(running ? "LIVE" : "Stoped"), 250, 570);
+    text("Timebase: "+scales[scale]*8+"ms", 50, 570);
+    text("Status: "+(running ? "LIVE" : "Stopped"), 250, 570);
     text("Mode: "+(maxmode?"MAX":"AVG"), 450, 570);
   }
 }
