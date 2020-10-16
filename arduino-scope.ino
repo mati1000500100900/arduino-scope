@@ -9,7 +9,7 @@ bool send = false;
 void loop() {
   // put your main code here, to run repeatedly:
   if (send) {
-    Serial.write(analogRead(A0) >> 2);
+    Serial.write(analogRead(A0)>>2);
   }
   
   if (Serial.available() > 0) {
