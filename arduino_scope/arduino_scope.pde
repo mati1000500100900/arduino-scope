@@ -19,7 +19,7 @@ boolean maxmode=false;
 void setup() {
   size(800, 600);
   // Open the port you are using at the rate you want:
-  myPort = new Serial(this, Serial.list()[0], 57600);
+  myPort = new Serial(this, Serial.list()[0], 115200);
 }
 
 void draw() {
@@ -59,7 +59,7 @@ void draw() {
         y1=max(y1, buffer[(buffsize+charstart-(int)Math.round((i+viewOffset)*scales[scale])+x)%buffsize]);
         y2=max(y2, buffer[((buffsize+charstart-(int)Math.round((i+1+viewOffset)*scales[scale])+x)%buffsize)]);
         y3=max(y3, buffer2[(buffsize+charstart-(int)Math.round((i+viewOffset)*scales[scale])+x)%buffsize]);
-        y4=max(y3, buffer2[((buffsize+charstart-(int)Math.round((i+1+viewOffset)*scales[scale])+x)%buffsize)]);
+        y4=max(y4, buffer2[((buffsize+charstart-(int)Math.round((i+1+viewOffset)*scales[scale])+x)%buffsize)]);
       }
     }
     stroke(255, 255, 0, 200);
@@ -69,7 +69,7 @@ void draw() {
   }
   textSize(16);
   stroke(0, 255, 0);
-  text("Timebase: "+scales[scale]*16+"ms", 50, 570);
+  text("Timebase: "+scales[scale]*12+"ms", 50, 570);
   text("Status: "+(running ? "LIVE" : "Stopped"), 250, 570);
   text("Mode: "+(maxmode?"MAX":"AVG"), 450, 570);
 }
